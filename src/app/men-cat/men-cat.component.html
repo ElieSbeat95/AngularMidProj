@@ -1,0 +1,9 @@
+<h1 style="color:rgb(12, 56, 95)  ;font-family: 'Times New Roman', Times, serif; text-align:center ">Men Category</h1>
+    <div style="text-align: center;">
+            <div class="box" *ngFor="let item of topsMen; let i=index">
+                <img [src]="item.imageUrl" alt="image link">
+                <h2>Price : {{item.price}}₪ </h2>
+                <h3>size {{item.size}}</h3>
+                <button (click)="sendInfo(i)" [class.checkout-btn]="item.inStock" [disabled]="!item.inStock" >{{item.inStock?"Add to Cart" : "Out of Stock"}}</button>
+            </div>
+    </div>
