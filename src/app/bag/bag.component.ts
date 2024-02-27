@@ -14,10 +14,15 @@ constructor(public serviceStore: ServiceStoreService) {
   ngOnInit():void{ //To call getTotalPrice() once every time entered to bag
     this.getTotalPrice();
   } 
+  
   getTotalPrice():void{
     for(let item in this.bagTotal){
       this.totalPrice+=Number(this.bagTotal[item].price);
   }
+}
+removeFromBag(item:any):void{
+  this.serviceStore.removeFromBag(item);
+  this.totalPrice-=Number(item.price);
 }
 }
 

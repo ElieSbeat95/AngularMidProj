@@ -7,6 +7,7 @@
                     <th>Product</th>
                     <th>Price</th>
                     <th>Size</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -14,6 +15,7 @@
                     <td><img [src]="item.imageUrl" height="100px" width="100px"></td>
                     <td>{{item.price}}₪</td>
                     <td>{{item.size}}</td>
+                    <td><button (click)="removeFromBag(item)">Remove item</button></td>
                 </tr>
             </tbody>
         </table>
